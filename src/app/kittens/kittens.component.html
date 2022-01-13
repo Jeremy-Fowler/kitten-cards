@@ -1,1 +1,16 @@
-<h2>{{kittens}}</h2>
+<div class="row" *ngFor="let kitten of kittens">
+  <span class="d-flex py-3">
+    <h2 class="px-3">{{kitten.name}}</h2>
+    <a *ngIf="kitten.adopted === false" href="{{kitten.url}}">
+      <button class="btn btn-success" title="Go to my adoption page!">Adopt me!</button>
+    </a>
+    <div *ngIf="kitten.adopted === true">I've already been adopted!</div>
+  </span>
+  <div class="row justify-content-between" *ngIf="kitten.images.length > 0">
+    <div *ngFor="let image of kitten.images" class="col-md-3">
+      <div  class="card" style="width: 18rem;">
+        <img :src="{{image}}" class="card-img-top" alt="...">
+      </div>
+    </div>  
+  </div>
+</div>
