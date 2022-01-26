@@ -6,10 +6,10 @@
     </a>
     <h2 *ngIf="kitten.adopted === true" class="mdi mdi-check-bold">Adopted!</h2>
   </span>
-  <div class="row justify-content-between" *ngIf="kitten.images.length > 0">
+  <div class="row justify-content-between mb-3" *ngIf="kitten.images.length > 0">
     <div *ngFor="let image of kitten.images" class="col-md-3 d-flex justify-content-center">
       <a href="{{image}}">
-        <div class="card" style="width: 18rem;">
+        <div class="card border-0 p-3 bg-dark" style="width: 18rem;">
           <img :src="{{image}}" class="card-img-top" alt="...">
         </div>
       </a>
