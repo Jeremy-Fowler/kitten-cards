@@ -1,4 +1,4 @@
-<div class="row" *ngFor="let kitten of kittens">
+<div class="row mx-2" *ngFor="let kitten of kittens">
   <span class="d-flex py-3">
     <h2 class="pe-3">{{kitten.name}}</h2>
     <a *ngIf="kitten.adopted === false" href="{{kitten.url}}">
@@ -10,7 +10,7 @@
     <div *ngFor="let image of kitten.images" class="col-md-3 d-flex justify-content-center">
       <a href="{{image}}">
         <div class="card rounded border-0 p-3 bg-dark" style="width: 18rem;">
-          <img :src="{{image}}" class="card-img-top rounded" alt="...">
+          <img :src="{{image}}" class="card-img-top rounded cover" alt="...">
         </div>
       </a>
     </div>
