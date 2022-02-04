@@ -1,18 +1,17 @@
-<div class="row mx-2" *ngFor="let kitten of kittens">
-  <span class="d-flex py-3">
-    <h2 class="pe-3">{{kitten.name}}</h2>
-    <a *ngIf="kitten.adopted === false" href="{{kitten.url}}">
-      <button class="btn btn-primary" title="Go to my adoption page!">Adopt me!</button>
-    </a>
-    <h2 *ngIf="kitten.adopted === true" class="mdi mdi-check-bold">Adopted!</h2>
-  </span>
-  <div class="row justify-content-between mb-3" *ngIf="kitten.images.length > 0">
-    <div *ngFor="let image of kitten.images" class="col-md-3 d-flex justify-content-center">
-      <a href="{{image}}">
-        <div class="card rounded border-0 p-3 bg-dark" style="width: 18rem;">
-          <img :src="{{image}}" class="card-img-top rounded cover" alt="...">
-        </div>
+<div *ngFor="let kitten of kittens">
+  <div class="row my-4">
+    <span class="d-flex mb-2">
+      <h2>{{kitten.name}}</h2>
+      <a href="{{kitten.url}}">
+        <button class="btn ms-3 btn-primary">Adopt Me!</button>
       </a>
+    </span>
+    <div class="row">
+      <div *ngFor="let image of kitten.images" class="col-3 col-md-3">
+        <a href="{{image}}">
+          <img class="img-fluid kitten-img rounded" src="{{image}}" alt="">
+        </a>
+      </div>
     </div>
   </div>
 </div>
